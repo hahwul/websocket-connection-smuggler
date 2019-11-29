@@ -107,6 +107,9 @@ Date: Fri, 29 Nov 2019 18:39:14 GMT
         �0{"pingInterval":25000,"pingTimeout":60000,"upgrades":["websocket"],"sid":"5148720e07f240a99e6aa7457f41686f"}�40
 ```
 
+## Video on asciinema
+[![asciicast](https://asciinema.org/a/vSYXtlQtvh7yBh0uBES9r5BMV.svg)](https://asciinema.org/a/vSYXtlQtvh7yBh0uBES9r5BMV)
+
 ## Reference
 - https://speakerdeck.com/0ang3el/whats-wrong-with-websocket-apis-unveiling-vulnerabilities-in-websocket-apis
 - https://www.hahwul.com/2019/10/websocket-connection-smuggling.html
