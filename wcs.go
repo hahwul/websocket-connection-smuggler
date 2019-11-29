@@ -37,8 +37,8 @@ func banner() {
            |   \\ /   /   
            |    \/   /    
             ---------
-     WebSocket Connection Smuggler =
-     by hahwul
+     WebSocket Connection Smuggler
+     by @hahwul
 
 `
 	fmt.Printf("%s", data)
@@ -105,8 +105,6 @@ func completer(d prompt.Document) []prompt.Suggest {
 		{Text: "set o_data", Description: "set Original Request"},
 		{Text: "set s_data", Description: "set Smuggling Request"},
 		{Text: "send", Description: "Testing packet"},
-		{Text: "scan", Description: "Scanning"},
-		{Text: "clear", Description: "clear screen"},
 		{Text: "help", Description: "help"},
 		{Text: "exit", Description: "exit"},
 	}
@@ -146,9 +144,10 @@ func send(ws rawdata) {
 			log.Fatalf("failed to connect to server")
 		}
 		re := regexp.MustCompile(`\n`)
-		req1 := re.ReplaceAllString(string(ws.o_data), `\r\n`)
-		req2 := re.ReplaceAllString(string(ws.s_data), `\r\n`)
-
+		req1 := re.ReplaceAllString(string(ws.o_data), "\r\n")
+		req2 := re.ReplaceAllString(string(ws.s_data), "\r\n")
+		//req1 := ws.o_data
+		//req2 := ws.s_data
 		fmt.Printf("%s", req1)
 		recvBuf := make([]byte, 4096)
 		conn.Write([]byte(req1))
@@ -172,7 +171,7 @@ func main() {
 	ws := rawdata{target: "None"}
 	banner()
 	for {
-		ac := prompt.Input("WCS(target=>"+ws.target+" | ssl=>"+fmt.Sprint(ws.ssl)+" | o_data=>"+string(len(ws.o_data))+" | s_data=> )"+string(len(ws.s_data))+" > ", completer)
+		ac := prompt.Input("WCS(target=>"+ws.target+" | ssl=>"+fmt.Sprint(ws.ssl)+" ) > ", completer)
 
 		cmd := ""
 		arg := ""
@@ -209,7 +208,7 @@ func main() {
 					ws.target = c[2]
 				}
 			default:
-				fmt.Println("don't understand it")
+				fmt.Println("don't understand it :(")
 			}
 		case "send":
 			send(ws)
@@ -222,8 +221,10 @@ func main() {
 		case "exit":
 			fmt.Println("Good bye")
 			os.Exit(1)
+		case "":
+
 		default:
-			fmt.Println("Not cmd")
+			fmt.Println("don't understand it :(")
 		}
 	}
 }
