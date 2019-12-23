@@ -112,6 +112,11 @@ Date: Fri, 29 Nov 2019 18:39:14 GMT
 ## Video on asciinema
 [![asciicast](https://asciinema.org/a/vSYXtlQtvh7yBh0uBES9r5BMV.svg)](https://asciinema.org/a/vSYXtlQtvh7yBh0uBES9r5BMV)
 
+## Donate
+I like coffee! I'm a coffee addict.<br>
+<a href="https://www.paypal.me/hahwul"><img src="https://www.paypalobjects.com/digitalassets/c/website/logo/full-text/pp_fc_hl.svg" height="50px"></a>
+<a href="https://www.buymeacoffee.com/hahwul"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" height="50px"></a>
+
 ## Reference
 - https://speakerdeck.com/0ang3el/whats-wrong-with-websocket-apis-unveiling-vulnerabilities-in-websocket-apis
 - https://www.hahwul.com/2019/10/websocket-connection-smuggling.html
